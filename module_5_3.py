@@ -8,7 +8,7 @@ class House:
             print("Такого этажа не существует")
             return
         for i in range(1, new_floor + 1):
-            if new_floor >= 1 and new_floor < self.number_of_floors:
+            if 1 <= new_floor < self.number_of_floors:
                 print(i)
 
     def __len__(self):
@@ -18,27 +18,27 @@ class House:
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
 
     def __eq__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, House) or isinstance(other, int):
             return self.number_of_floors == other.number_of_floors
 
     def __lt__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, House) or isinstance(other, int):
             return self.number_of_floors < other.number_of_floors
 
     def __le__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, House) or isinstance(other, int):
             return self.number_of_floors <= other.number_of_floors
 
     def __gt__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, House) or isinstance(other, int):
             return self.number_of_floors > other.number_of_floors
 
     def __ge__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, House) or isinstance(other, int):
             return self.number_of_floors >= other.number_of_floors
 
     def __ne__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, House) or isinstance(other, int):
             return self.number_of_floors != other.number_of_floors
 
     def __add__(self, value):
